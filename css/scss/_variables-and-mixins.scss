@@ -1,0 +1,32 @@
+$light-beige: #edece4;
+$medium-beige: #cbc6b9;
+$dark-beige: #988c77;
+$grey: #2a2426;
+$green: #1ab912;
+
+$lato: 'Lato', sans-serif;
+$courier: 'Courier Prime', monospace;
+
+@function em($pixel, $context: 16) {
+    @return $pixel / $context + em;
+}
+
+@mixin typography-1($size) {
+    font-family: $lato;
+    @if $size == 18 {
+        font-size: em(18);
+        line-height: em(30, 18);
+    }
+}
+
+@mixin  typography-2($size) {
+    font-family: $courier;
+    @if $size == 18 {
+        font-size: em(18);
+        line-height: em(30, 18);
+    } @else if $size == 24 {
+        font-size: em(24);
+        line-height: em(30, 24);
+    }
+}
+
